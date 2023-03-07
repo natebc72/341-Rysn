@@ -1,0 +1,19 @@
+{
+  "name": "341-rysn",
+  "version": "1.0.0",
+  "description": "CSE341 Rysn Team Project Book Tracking Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natebc72/341-Rysn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natebc72/341-Rysn/issues"
+  },
+  "homepage": "https://github.com/natebc72/341-Rysn#readme"
+}
