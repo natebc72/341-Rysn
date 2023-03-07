@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/natebc72/341-Rysn/issues"
   },
-  "homepage": "https://github.com/natebc72/341-Rysn#readme"
+  "homepage": "https://github.com/natebc72/341-Rysn#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
