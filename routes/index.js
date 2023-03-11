@@ -66,5 +66,6 @@ routes.get("/request/", requestController.deleteRequest);
 routes.get('/', (req, res) => {
   res.send('Working');
 });
+routes.use('/', require('./swagger'))
 
 module.exports = routes;
