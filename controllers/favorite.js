@@ -71,9 +71,58 @@ const getFavoriteReview = async (req, res, next) => {
     } 
 }
 
+/*////////////////
+////POST Function////
+////////////////*/
+
+const updateFavorite = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+        res.status(400).json('That is not a valid ID. Please try again.');
+    }
+    const favoriteID = new ObjectId(req.params.id);
+    const favorite = {
+
+      isbn: req.body.isbn,
+      title: req.body.title,
+      author: req.body.author,
+      image: req.body.image
+    };
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('favorites')
+      .replaceOne({ _id: favoriteID }, favorite);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'An error occurred while updating the favorite.');
+    }
+  };
+
+  /*////////////////
+////DELETE Function////
+////////////////*/
+  
+  const deleteFavorite = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+        res.status(400).json('That is not a valid ID. Please try again.');
+    }
+    const favoriteID = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db().collection('favorites').remove({ _id: favoriteID}, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'An error occurred while deleting the favorite.');
+    }
+  };
+
 module.exports = {
     getFavorites,
     getFavoriteId,
     getFavoriteBook,
     getFavoriteReview,
+    updateFavorite,
+    deleteFavorite
 }

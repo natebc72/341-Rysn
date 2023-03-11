@@ -40,23 +40,25 @@ routes.get("/request/:id", requestController.getSingleRequest);
 ////PUT ROUTES////
 ////////////////*/
 //Book Routes//
-
+routes.get("/book/", bookController.updateBook);
 //Favorite Routes//
-
+routes.get("/favorite/", favoriteController.updateFavorite);
 //Reviews Routes//
-
+routes.get("/review/", reviewController.updateReview);
 //Requests Routes//
+routes.get("/request/", requestController.updateRequest);
 
 /*////////////////
 ////DEL ROUTES////
 ////////////////*/
 //Book Routes//
-
+routes.get("/book/", bookController.deleteBook);
 //Favorite Routes//
-
+routes.get("/favorite/", favoriteController.deleteFavorite);
 //Reviews Routes//
-
+routes.get("/review/", reviewController.deleteReview);
 //Requests Routes//
+routes.get("/request/", requestController.deleteRequest);
 
 /*////////////////
 ////MISC ROUTES////

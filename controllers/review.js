@@ -35,7 +35,55 @@ const getSingleReviews = async (req, res, next) => {
     } 
 }
 
+/*////////////////
+////POST Function////
+////////////////*/
+
+const updateReview = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+        res.status(400).json('That is not a valid ID. Please try again.');
+    }
+    const reviewID = new ObjectId(req.params.id);
+    const review = {
+
+      date: req.body.date,
+      description: req.body.description,
+      rating: req.body.rating
+    };
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('reviews')
+      .replaceOne({ _id: reviewID }, review);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'An error occurred while updating the review.');
+    }
+  };
+
+/*////////////////
+////DELETE Function////
+////////////////*/
+  
+  const deleteReview = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)){
+        res.status(400).json('That is not a valid ID. Please try again.');
+    }
+    const reviewID = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db().collection('reviews').remove({ _id: reviewID}, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'An error occurred while deleting the review.');
+    }
+  };
+
 module.exports = {
     getReviews,
     getSingleReviews,
+    updateReview,
+    deleteReview
 }
