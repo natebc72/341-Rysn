@@ -86,7 +86,7 @@ const getBookReviews = async (req, res, next) => {
 }
 
 const addBook = async (req, res) => {
-    const collection = await mongodb.getDb().db().collection('book')
+    const collection = await mongodb.getDb().db().collection('book');
     collection.insertOne(req.body).then(result => {
         res.status(204).send();
     }).catch(err => {

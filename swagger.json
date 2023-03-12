@@ -5,7 +5,7 @@
     "description": "Book Collection App",
     "version": "1.0.0"
   },
-  "host": "carrentalapp.onrender.com",
+  "host": "three41rysn-bookapp.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -315,6 +315,20 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/book/addBook": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
