@@ -5,8 +5,8 @@ const doc = {
     title: 'Book Collection App',
     description: 'Book Collection App'
   },
-  host: 'localhost:10000',
-  //'three41rysn-bookapp.onrender.com',
+  host: 'https://rysn-final-week-1.onrender.com',
+  
   schemes: ['http']
 };
 

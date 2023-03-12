@@ -5,9 +5,9 @@
     "description": "Book Collection App",
     "version": "1.0.0"
   },
-  "host": "localhost:10000",
+  "host": "rysn-final-week-1.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/book/": {
       "get": {
