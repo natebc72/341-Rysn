@@ -85,6 +85,15 @@ const getBookReviews = async (req, res, next) => {
     } 
 }
 
+const addBook = async (req, res) => {
+    const collection = await mongodb.getDb().db().collection('book')
+    collection.insertOne(req.body).then(result => {
+        res.status(204).send();
+    }).catch(err => {
+        res.status(500).json(response.error || 'An error occurred while updating the book.');
+    })
+  };
+
 const updateBook = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
@@ -135,4 +144,5 @@ module.exports = {
     getBookReviews,
     updateBook,
     deleteBook,
+    addBook
 }
