@@ -5,8 +5,9 @@ const doc = {
     title: 'Book Collection App',
     description: 'Book Collection App'
   },
-  host: 'three41rysn-bookapp.onrender.com',
-  schemes: ['https']
+  host: 'localhost:10000',
+  //'three41rysn-bookapp.onrender.com',
+  schemes: ['http']
 };
 
 const outputFile = './swagger.json';

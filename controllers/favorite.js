@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectId;
 ////////////////*/
 const getFavorites = async (req, res, next) => {
     try{
-        const dbresult = await mongodb.getDb().db().collection('favorites').find();
+        const dbresult = await mongodb.getDb().db('project').collection('favorites').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -23,7 +23,7 @@ const getFavoriteId = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('favorites').find();
+        const dbresult = await mongodb.getDb().db('project').collection('favorites').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -41,7 +41,7 @@ const getFavoriteBook = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('book').find();
+        const dbresult = await mongodb.getDb().db('project').collection('book').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -59,7 +59,7 @@ const getFavoriteReview = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('reviews').find();
+        const dbresult = await mongodb.getDb().db('project').collection('reviews').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -89,7 +89,7 @@ const updateFavorite = async (req, res) => {
     };
     const response = await mongodb
       .getDb()
-      .db()
+      .db('project')
       .collection('favorites')
       .replaceOne({ _id: favoriteID }, favorite);
     console.log(response);
@@ -109,7 +109,7 @@ const updateFavorite = async (req, res) => {
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const favoriteID = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('favorites').remove({ _id: favoriteID}, true);
+    const response = await mongodb.getDb().db('project').collection('favorites').remove({ _id: favoriteID}, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();

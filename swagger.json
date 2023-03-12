@@ -5,11 +5,9 @@
     "description": "Book Collection App",
     "version": "1.0.0"
   },
-  "host": "three41rysn-bookapp.onrender.com",
+  "host": "localhost:10000",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/book/": {
       "get": {
@@ -31,9 +29,7 @@
     "/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -58,9 +54,7 @@
     "/book/findByNumber/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -85,9 +79,7 @@
     "/book/findByAuthor/{author}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "author",
@@ -112,9 +104,7 @@
     "/book/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -156,9 +146,7 @@
     "/favorite/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -183,9 +171,7 @@
     "/favorite/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -210,9 +196,7 @@
     "/favorite/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -254,9 +238,7 @@
     "/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -298,9 +280,7 @@
     "/request/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",

@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectId;
 ////////////////*/
 const getReviews = async (req, res, next) => {
     try{
-        const dbresult = await mongodb.getDb().db().collection('reviews').find();
+        const dbresult = await mongodb.getDb().db('project').collection('reviews').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -23,7 +23,7 @@ const getSingleReviews = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('reviews').find();
+        const dbresult = await mongodb.getDb().db('project').collection('reviews').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -52,7 +52,7 @@ const updateReview = async (req, res) => {
     };
     const response = await mongodb
       .getDb()
-      .db()
+      .db('project')
       .collection('reviews')
       .replaceOne({ _id: reviewID }, review);
     console.log(response);
@@ -72,7 +72,7 @@ const updateReview = async (req, res) => {
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const reviewID = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('reviews').remove({ _id: reviewID}, true);
+    const response = await mongodb.getDb().db('project').collection('reviews').remove({ _id: reviewID}, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
