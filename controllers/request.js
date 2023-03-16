@@ -10,7 +10,7 @@ const getRequests = async (req, res, next) => {
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(element);
+            res.status(200).json(content);
         })
     }catch(err){
         res.status(500).json(err);
