@@ -10,7 +10,7 @@ const getSingleBook = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('book').find();
+        const dbresult = await mongodb.getDb().db('project').collection('book').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -23,11 +23,11 @@ const getSingleBook = async (req, res, next) => {
 }
 const getAllBooks = async (req, res, next) => {
     try{
-        const dbresult = await mongodb.getDb().db().collection('book').find();
+        const dbresult = await mongodb.getDb().db('project').collection('book').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(element);
+            res.status(200).json(content);
         })
     }catch(err){
         res.status(500).json(err);
@@ -39,7 +39,7 @@ const findByNumber = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing author to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('book').find();
+        const dbresult = await mongodb.getDb().db('project').collection('book').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -56,7 +56,7 @@ const findByAuthor = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('book').find();
+        const dbresult = await mongodb.getDb().db('project').collection('book').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -73,7 +73,7 @@ const getBookReviews = async (req, res, next) => {
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
-        const dbresult = await mongodb.getDb().db().collection('reviews').find();
+        const dbresult = await mongodb.getDb().db('project').collection('reviews').find();
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -84,6 +84,24 @@ const getBookReviews = async (req, res, next) => {
         res.status(500).json(err);
     } 
 }
+
+  const addBook = async (req, res) => {
+    const book = {
+      isbn: req.body.isbn,
+      title: req.body.title,
+      author: req.body.author,
+      release: req.body.release,
+      genre: req.body.genre,
+      synopsis: req.body.synopsis,
+      photo: req.body.photo
+    };
+    const response = await mongodb.getDb().db('project').collection('book').insertOne(book);
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      res.status(500).json(response.error || 'There was an error while adding the book.');
+    }
+  };
 
 const updateBook = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
@@ -102,7 +120,7 @@ const updateBook = async (req, res) => {
     };
     const response = await mongodb
       .getDb()
-      .db()
+      .db('project')
       .collection('books')
       .replaceOne({ _id: bookId }, book);
     console.log(response);
@@ -118,7 +136,7 @@ const updateBook = async (req, res) => {
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const bookId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('books').remove({ _id: bookId }, true);
+    const response = await mongodb.getDb().db('project').collection('books').remove({ _id: bookId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
@@ -135,4 +153,5 @@ module.exports = {
     getBookReviews,
     updateBook,
     deleteBook,
+    addBook
 }

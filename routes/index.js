@@ -69,7 +69,7 @@ routes.get("/request/:id", requestController.getSingleRequest);
 ////POST ROUTES////
 ////////////////*/
 //Book Routes//
-
+routes.post("/book/addBook", bookController.addBook);
 //Favorite Routes//
 
 //Reviews Routes//
