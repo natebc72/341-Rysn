@@ -1,9 +1,49 @@
 const routes = require('express').Router();
 const express = require('express');
+const app = express(); 
+const path = require('path');
+const axios = require('axios');
 const bookController = require("../controllers/books.js");
 const favoriteController = require("../controllers/favorite.js");
 const reviewController = require("../controllers/review.js");
 const requestController = require("../controllers/request.js");
+app.set('views', path.join(__dirname, '../views'));
+app.set('view engine', 'pug');
+
+routes.get('/', (req, res) => {
+  res.render('index');
+});
+routes.get('/login', (req, res) => {
+  res.render('login');
+});
+
+
+//OAuth
+routes.get('/auth', (req,res) =>{
+  res.redirect(
+    `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}`
+  )
+});
+
+routes.get('/oauth-callback', ({ query: { code } }, res) => {
+  const body = {
+    client_id: process.env.CLIENT_ID,
+    client_secret: process.env.CLIENT_SECRET,
+    code,
+  };
+  const opts = { headers: { accept: 'application/json' } };
+  
+  axios
+    .post('https://github.com/login/oauth/access_token', body, opts)
+    .then((_res) => _res.data.access_token )
+    .then((token) => {
+      console.log('My Token: ' , token);
+      res.redirect(`/?token=${token}`)
+    })
+    .catch((err) => res.status(500).json({ err: err.message}))
+})
+
+
 
 /*////////////////
 ////GET ROUTES////

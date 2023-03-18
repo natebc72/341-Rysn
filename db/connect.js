@@ -1,32 +1,33 @@
-const dotenv = require('dotenv');
+const dotenv = require('dotenv')
 dotenv.config();
+let uri = process.env['MONGODB_URI'];
 const MongoClient = require('mongodb').MongoClient;
-
-let _db;
-
-const initDb = (callback) => {
-  if (_db) {
-    console.log('Collection Database has been initialized! :)');
-    return callback(null, _db);
+ async function initDb(uri) {
+  let mongoClient;
+  
+  try {
+      mongoClient = new MongoClient(uri);
+      console.log('Connecting to MongoDB Atlas cluster...');
+      await mongoClient.connect();
+      console.log('Successfully connected to MongoDB Atlas!');
+      return mongoClient;
+  } catch (error) {
+      console.error('Connection to MongoDB Atlas failed!', error);
+      process.exit();
   }
-  MongoClient.connect(process.env.MONGODB_URI)
-    .then((client) => {
-      _db = client;
-      callback(null, _db);
-    })
-    .catch((err) => {
-      callback(err);
-    });
-};
+}
+let mongoClient = initDb(uri);
 
 const getDb = () => {
-  if (!_db) {
-    throw Error('Sorry, Collections Database was not initialized :( ');
+  if (!initDb(uri)) {
+    throw Error('Db not initialized');
   }
-  return _db;
+  return initDb(uri);
 };
-
 module.exports = {
   initDb,
   getDb,
 };
+
+
+

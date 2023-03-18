@@ -5,7 +5,7 @@ const doc = {
     title: 'Book Collection App',
     description: 'Book Collection App'
   },
-  host: 'carrentalapp.onrender.com',
+  host: 'three41rysn-bookapp.onrender.com',
   schemes: ['https']
 };
 
