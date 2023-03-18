@@ -80,25 +80,25 @@ routes.post("/book/addBook", bookController.addBook);
 ////PUT ROUTES////
 ////////////////*/
 //Book Routes//
-routes.get("/book/", bookController.updateBook);
+routes.put("/book/", bookController.updateBook);
 //Favorite Routes//
-routes.get("/favorite/", favoriteController.updateFavorite);
+routes.put("/favorite/", favoriteController.updateFavorite);
 //Reviews Routes//
-routes.get("/review/", reviewController.updateReview);
+routes.put("/review/", reviewController.updateReview);
 //Requests Routes//
-routes.get("/request/", requestController.updateRequest);
+routes.put("/request/", requestController.updateRequest);
 
 /*////////////////
 ////DEL ROUTES////
 ////////////////*/
 //Book Routes//
-routes.get("/book/", bookController.deleteBook);
+routes.delete("/book/", bookController.deleteBook);
 //Favorite Routes//
-routes.get("/favorite/", favoriteController.deleteFavorite);
+routes.delete("/favorite/", favoriteController.deleteFavorite);
 //Reviews Routes//
-routes.get("/review/", reviewController.deleteReview);
+routes.delete("/review/", reviewController.deleteReview);
 //Requests Routes//
-routes.get("/request/", requestController.deleteRequest);
+routes.delete("/request/", requestController.deleteRequest);
 
 /*////////////////
 ////MISC ROUTES////
