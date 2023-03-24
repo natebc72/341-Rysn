@@ -1,0 +1,131 @@
+{
+  "book template": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 1": {
+    "isbn": "9780765337320",
+    "title": "Ender's Game",
+    "author": "Card, Orson Scott",
+    "release": "January 15, 1985",
+    "genre": "Science-Fiction",
+    "synopsis": "Ender's Game is a 1985 military science fiction novel by American author Orson Scott Card. Set at an unspecified date in Earth's future, the novel presents an imperiled humankind after two conflicts with an insectoid alien species they dub 'the buggers'.",
+    "photo": "enders-gm.jpg"
+  },
+
+  "book 2": {
+    "isbn": "9781399613385",
+    "title": "Tress of the Emeral Sea",
+    "author": "Sanderson, Brandon",
+    "release": "April 4, 2023",
+    "genre": "Fantasy",
+    "synopsis": "The only life Tress has known on her island home in an emerald-green ocean has been a simple one, with the simple pleasures of collecting cups brought by sailors from faraway lands and listening to stories told by her friend Charlie. But when his father takes him on a voyage to find a bride and disaster strikes, Tress must stow away on a ship and seek the Sorceress of the deadly Midnight Sea. Amid the spore oceans where pirates abound, can Tress leave her simple life behind and make her own place sailing a sea where a single drop of water can mean instant death?",
+    "photo": "em-sea.jpg"
+  },
+
+  "book 3": {
+    "isbn": "0375826696",
+    "title": "Eragon (Inheritance, Book 1)",
+    "author": "Paolini, Christopher",
+    "release": "April 26, 2005",
+    "genre": "Fantasy",
+    "synopsis": "When fifteen-year-old Eragon finds a polished blue stone in the forest, he thinks it is the lucky discovery of a poor farm boy. But when the stone brings a dragon hatchling, Eragon soon realizes he has stumbled upon a legacy nearly as old as the Empire itself. Overnight his simple life is shattered, and, gifted with only an ancient sword, a loyal dragon, and sage advice from an old storyteller, Eragon is soon swept into a dangerous tapestry of magic, glory, and power. Now his choices could save—or destroy—the Empire.",
+    "photo": "eragon.jpg"
+  },
+
+  "book 4": {
+    "isbn": "0765365278",
+    "title": "The Way of Kings",
+    "author": "Sanderson, Brandon",
+    "release": "May 24, 2011",
+    "genre": "Fantasy",
+    "synopsis": "Roshar is a world of stone and storms. Uncanny tempests of incredible power sweep across the rocky terrain so frequently that they have shaped ecology and civilization alike. Animals hide in shells, trees pull in branches, and grass retracts into the soilless ground. Cities are built only where the topography offers shelter. It has been centuries since the fall of the ten consecrated orders known as the Knights Radiant, but their Shardblades and Shardplate remain: mystical swords and suits of armor that transform ordinary men into near-invincible warriors. Men trade kingdoms for Shardblades. Wars were fought for them, and won by them. One such war rages on a ruined landscape called the Shattered Plains. There, Kaladin, who traded his medical apprenticeship for a spear to protect his little brother, has been reduced to slavery. In a war that makes no sense, where ten armies fight separately against a single foe, he struggles to save his men and to fathom the leaders who consider them expendable. Brightlord Dalinar Kholin commands one of those other armies. Like his brother, the late king, he is fascinated by an ancient text called The Way of Kings. Troubled by over-powering visions of ancient times and the Knights Radiant, he has begun to doubt his own sanity. Across the ocean, an untried young woman named Shallan seeks to train under an eminent scholar and notorious heretic, Dalinar's niece, Jasnah. Though she genuinely loves learning, Shallan's motives are less than pure. As she plans a daring theft, her research for Jasnah hints at secrets of the Knights Radiant and the true cause of the war.",
+    "photo": "w-o-k.jpg"
+  },
+
+  "book 5": {
+    "isbn": "9780345478276",
+    "title": "Star Wars: Republic Commando - Hard Contact",
+    "author": "Karen Traviss",
+    "release": "October 26, 2004",
+    "genre": "Science-Fiction",
+    "synopsis": "On a mission to sabotage a chemical weapon research facility on a Separatist-held planet, four clone troopers operate under the very noses of their enemies. The commandos are outnumbered and outgunned, deep behind enemy lines with no backup-and working with strangers instead of trusted teammates. Matters don't improve when Darman, the squad's demolitions expert, gets separated from the others during planetfall. Even Darman's apparent good luck in meeting an inexperienced Padawan vanishes once Etain admits to her woeful inexperience. For the separated clone commandos and stranded Jedi, a long, dangerous journey lies ahead, through hostile territory brimming with Trandoshan slavers, Separatists, and suspicious natives. A single misstep could mean discovery . . . and death. It's a virtual suicide mission for anyone-anyone except Republic Commandos.",
+    "photo": "rep-com.jpg"
+  },
+
+  "book 6": {
+    "isbn": "0980003431",
+    "title": "The Crown Conspiracy",
+    "author": "Sullivan, Michael J.",
+    "release": "October 1, 2008",
+    "genre": "Fantasy",
+    "synopsis": "THEY KILLED THE KING. THEY PINNED IT ON TWO MEN. THEY CHOSE POORLY- There is no ancient evil to defeat, no orphan destined for greatness, just two guys in the wrong place at the wrong time. Royce Melborn, a skilled thief, and his mercenary partner, Hadrian Blackwater make a profitable living carrying out dangerous assignments for conspiring nobles until they become the unwitting scapegoats in a plot to murder the king. Sentenced to death, they have only one way out...and so begins this tale of treachery and adventure, sword fighting and magic, myth and legend.",
+    "photo": "crown-con.jpg"
+  },
+
+  "book 7": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 8": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 9": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 10": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 11": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  },
+
+  "book 12": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "release": "",
+    "genre": "",
+    "synopsis": "",
+    "photo": ""
+  }
+}

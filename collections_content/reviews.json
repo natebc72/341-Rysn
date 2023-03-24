@@ -1,0 +1,51 @@
+{
+  "review template": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "image": "",
+    "review-content": "",
+    "rating": "",
+    "user": ""
+  },
+
+  "review 1": {
+    "isbn": "0375826696",
+    "title": "Eragon (Inheritance, Book 1)",
+    "author": "Paolilni, Christopher",
+    "image": "eragon.jpg",
+    "review-content": "This book is the start to something great! This is hands down, one of the best series our there. Once I get started I can never stop. Amazing read.",
+    "rating": "5/5",
+    "user": "n-christiansen"
+  },
+
+  "review 2": {
+    "isbn": "9781399613385",
+    "title": "Tress of the Emerald Sea",
+    "author": "Sanderson, Brandon",
+    "image": "em-sea.jpg",
+    "review-content": "They say the grass is greener on someones elses lawn, but when your reading this your grass is deffinitly greener. This book takes you to a magical world and has you trapped till the very last page.",
+    "rating": "5/5",
+    "user": "c-pledge"
+  },
+
+  "review 3": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "image": "",
+    "review-content": "",
+    "rating": "",
+    "user": ""
+  },
+
+  "review 4": {
+    "isbn": "",
+    "title": "",
+    "author": "",
+    "image": "",
+    "review-content": "",
+    "rating": "",
+    "user": ""
+  }
+}

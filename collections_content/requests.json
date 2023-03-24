@@ -1,0 +1,41 @@
+{
+  "req template": {
+    "title": "",
+    "author": "",
+    "requestor": "",
+    "email": "",
+    "date": ""
+  },
+
+  "req 1": {
+    "title": "",
+    "author": "",
+    "requestor": "n-christiansen",
+    "email": "member72@rysn.com",
+    "date": "March 24, 2023"
+  },
+
+  "req 2": {
+    "title": "Words of Radience",
+    "author": "Sanderson, Brandon",
+    "requestor": "c-pledge",
+    "email": "member102@rysn.com",
+    "date": "March 23, 2023"
+  },
+
+  "req 3": {
+    "title": "",
+    "author": "",
+    "requestor": "",
+    "email": "member3@rysn.com",
+    "date": ""
+  },
+
+  "req 4": {
+    "title": "",
+    "author": "",
+    "requestor": "",
+    "email": "member28@rysn.com",
+    "date": ""
+  }
+}
