@@ -70,33 +70,33 @@
   },
 
   "book 7": {
-    "isbn": "",
-    "title": "",
-    "author": "",
-    "release": "",
-    "genre": "",
-    "synopsis": "",
-    "photo": ""
+    "isbn": "9780812974492",
+    "title": "Unbroken",
+    "author": "Hillenbrand, Lauren",
+    "release": "July 29, 2014",
+    "genre": "Biography",
+    "synopsis": "In boyhood, Louis Zamperini was an incorrigible delinquent. As a teenager, he channeled his defiance into running, discovering a prodigious talent that had carried him to the Berlin Olympics. But when World War II began, the athlete became an airman, embarking on a journey that led to a doomed flight on a May afternoon in 1943. When his Army Air Forces bomber crashed into the Pacific Ocean, against all odds, Zamperini survived, adrift on a foundering life raft. Ahead of Zamperini lay thousands of miles of open ocean, leaping sharks, thirst and starvation, enemy aircraft, and, beyond, a trial even greater. Driven to the limits of endurance, Zamperini would answer desperation with ingenuity; suffering with hope, resolve, and humor; brutality with rebellion. His fate, whether triumph or tragedy, would be suspended on the fraying wire of his will.",
+    "photo": "unbroke.jpg"
   },
 
   "book 8": {
-    "isbn": "",
-    "title": "",
-    "author": "",
-    "release": "",
-    "genre": "",
-    "synopsis": "",
-    "photo": ""
+    "isbn": "0515153656",
+    "title": "Killing Floor (Jack Reacher)",
+    "author": "Child, Lee",
+    "release": "October 30, 2012",
+    "genre": "Action",
+    "synopsis": "Ex-military policeman Jack Reacher is a drifter. He's just passing through Margrave, Georgia, and in less than an hour, he's arrested for murder. Not much of a welcome. All Reacher knows is that he didn't kill anybody. At least not here. Not lately. But he doesn't stand a chance of convincing anyone. Not in Margrave, Georgia. Not a chance in hell.",
+    "photo": "k-floor.jpg"
   },
 
   "book 9": {
-    "isbn": "",
-    "title": "",
-    "author": "",
-    "release": "",
-    "genre": "",
-    "synopsis": "",
-    "photo": ""
+    "isbn": "0553280902",
+    "title": "Hondo",
+    "author": "L'amour, Louis",
+    "release": "April 1, 1983",
+    "genre": "Western",
+    "synopsis": "He was etched by the desert's howling winds, a big, broad-shouldered man who knew the ways of the Apache and the ways of staying alive. She was a woman alone raising a young son on a remote Arizona ranch. And between Hondo Lane and Angie Lowe was the warrior Vittoro, whose people were preparing to rise against the white men. Now the pioneer woman, the gunman, and the Apache warrior are caught in a drama of love, war, and honor.",
+    "photo": "hondo.jpg"
   },
 
   "book 10": {
