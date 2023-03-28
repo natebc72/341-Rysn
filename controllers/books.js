@@ -1,4 +1,5 @@
 const mongodb = require('../db/connect');
+const validator = require('../library/validate');
 const ObjectId = require('mongodb').ObjectId; 
 
 /*////////////////
@@ -86,6 +87,7 @@ const getBookReviews = async (req, res, next) => {
 }
 
   const addBook = async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
     const book = {
       isbn: req.body.isbn,
       title: req.body.title,
@@ -95,12 +97,19 @@ const getBookReviews = async (req, res, next) => {
       synopsis: req.body.synopsis,
       photo: req.body.photo
     };
-    const response = await mongodb.getDb().db('project').collection('book').insertOne(book);
-    if (response.acknowledged) {
-      res.status(201).json(response);
-    } else {
-      res.status(500).json(response.error || 'There was an error while adding the book.');
+    if(!validator.validateInt(book.isbn)){
+        res.status(500).json('There was an error while adding the book with the ISBN.');
+    }else if (!validator.validateString(book)){
+        res.status(500).json('There was an error while adding the book with missing fields.');
+    }else{
+        const response = await mongodb.getDb().db('project').collection('book').insertOne(book);
+        if (response.acknowledged) {
+            res.status(201).json(response);
+        } else {
+            res.status(500).json(response.error || 'There was an error while adding the book.');
+        }
     }
+    
   };
 
 const updateBook = async (req, res) => {
