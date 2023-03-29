@@ -38,14 +38,34 @@ const getSingleReviews = async (req, res, next) => {
 /*////////////////
 ////POST Function////
 ////////////////*/
+const addReview = async (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  const review = {
+    date: req.body.date,
+    description: req.body.description,
+    rating: req.body.rating
+  };
+  if (!validator.validateString(review)){
+      res.status(500).json('There was an error while adding the review with missing fields.');
+  }else{
+      const response = await mongodb.getDb().db('project').collection('reviews').insertOne(review);
+      if (response.acknowledged) {
+          res.status(201).json(response);
+      } else {
+          res.status(500).json(response.error || 'There was an error while adding the review.');
+      }
+  } 
+};
 
+/*////////////////
+////UPDATE Function////
+////////////////*/
 const updateReview = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const reviewID = new ObjectId(req.params.id);
     const review = {
-
       date: req.body.date,
       description: req.body.description,
       rating: req.body.rating
@@ -66,7 +86,6 @@ const updateReview = async (req, res) => {
 /*////////////////
 ////DELETE Function////
 ////////////////*/
-  
   const deleteReview = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
@@ -84,6 +103,7 @@ const updateReview = async (req, res) => {
 module.exports = {
     getReviews,
     getSingleReviews,
+    addReview,
     updateReview,
     deleteReview
 }

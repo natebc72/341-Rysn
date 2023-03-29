@@ -7,11 +7,14 @@ const validateInt = function(x){
 
 const validateString = function(x){
     for(var i in x){
-        if(x[i].length === 0){
+        if(x[i] == undefined){
+            return false
+        }
+        else if(x[i].length === 0){
             return false;
         }
     }
     return true;
 }
 
-module.exports = {validateInt, validateString}
+module.exports = {validateInt, validateString, validateEntries}

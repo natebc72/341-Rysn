@@ -38,6 +38,30 @@ const getSingleRequest = async (req, res, next) => {
 /*////////////////
 ////POST Function////
 ////////////////*/
+const addRequest = async (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  const request = {
+    date: req.body.date,
+    description: req.body.description,
+    rating: req.body.rating
+  };
+  if(!validator.validateInt(request.isbn)){
+      res.status(500).json('There was an error while adding the request with the ISBN.');
+  }else if (!validator.validateString(request)){
+      res.status(500).json('There was an error while adding the request with missing fields.');
+  }else{
+      const response = await mongodb.getDb().db('project').collection('requests').insertOne(request);
+      if (response.acknowledged) {
+          res.status(201).json(response);
+      } else {
+          res.status(500).json(response.error || 'There was an error while adding the request.');
+      }
+  } 
+};
+
+/*////////////////
+////UPDATE Function////
+////////////////*/
 
 const updateRequest = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
@@ -45,7 +69,6 @@ const updateRequest = async (req, res) => {
     }
     const requestID = new ObjectId(req.params.id);
     const request = {
-
       date: req.body.date,
       description: req.body.description,
       rating: req.body.rating
@@ -84,6 +107,7 @@ const updateRequest = async (req, res) => {
 module.exports = {
     getRequests,
     getSingleRequest,
+    addRequest,
     updateRequest,
     deleteRequest,
 }
