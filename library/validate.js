@@ -17,4 +17,4 @@ const validateString = function(x){
     return true;
 }
 
-module.exports = {validateInt, validateString, validateEntries}
+module.exports = {validateInt, validateString}
