@@ -1,29 +1,37 @@
+##Get all Books working
 GET http://localhost:10000/book/ HTTP/1.1
-###
-GET http://localhost:10000/book/6407701a8d68541ba17ab03d HTTP/1.1
-###
+
+### Get single Book by ID working
+GET http://localhost:10000/book/6424e1c67a3cf725d649558a HTTP/1.1
+Content-Type: application/json
+
+###Add Book working
 POST http://localhost:10000/book/addBook HTTP/1.1
 Content-Type: application/json
 
 {
-    "isbn": "00673400",
-    "title": "Productivity",
-    "author": "Hamburger Helper",
-    "release": "2022-02-02",
-    "genre": "Self-help",
-    "synopsis": "Some synopsis",
-    "photo": "help.jpg"
+    "isbn": "123458",
+    "title": "Skyward",
+    "author": "Brandon Sanderson",
+    "release": "2018-06-11",
+    "genre": "Sci-Fi",
+    "synopsis": "Spensas world has been under alien attack for decades. Pilots are the heroes of whats left of humanity, and becoming a pilot is Spensas dream. Ever since she was a little girl, Spensa has dreamed of soaring skyward and proving her bravery. But her fathers legacy stands in the way—he was a pilot who was killed for desertion years ago, branding Spensa the daughter of a coward, and making her chances of attending flight school slim to none.",
+    "photo": "w-o-k.jpg"
 }
-###
-POST http://localhost:10000/book/addBook HTTP/1.1
+
+### Delete Currently not working
+DELETE http://localhost:10000/book/6424e79a2499df244ff18bb1 HTTP/1.1
+
+#### Put Currently not working
+PUT http://localhost:10000/book/6424e1c67a3cf725d649558a HTTP/1.1
 Content-Type: application/json
 
 {
-    "isbn": "",
-    "title": "a",
-    "author": "Hamburger Helper",
-    "release": "2022-02-02",
-    "genre": "Self-help",
-    "synopsis": "Some synopsis",
-    "photo": "help.jpg"
+    "isbn": "1234688",
+    "title": "Cytonic",
+    "author": "Brandon Sanderson",
+    "release": "2018-06-11",
+    "genre": "Sci-Fi",
+    "synopsis": "Spensas world has been under alien attack for 10 decades. Pilots are the heroes of whats left of humanity, and becoming a pilot is Spensas dream. Ever since she was a little girl, Spensa has dreamed of soaring skyward and proving her bravery. But her fathers legacy stands in the way—he was a pilot who was killed for desertion years ago, branding Spensa the daughter of a coward, and making her chances of attending flight school slim to none.",
+    "photo": "w-o-k.jpg"
 }

@@ -74,6 +74,31 @@ const getFavoriteReview = async (req, res, next) => {
 /*////////////////
 ////POST Function////
 ////////////////*/
+const addFavorite = async (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    const favorite = {
+        isbn: req.body.isbn,
+        title: req.body.title,
+        author: req.body.author,
+        image: req.body.image
+      };
+    if(!validator.validateInt(favorite.isbn)){
+        res.status(500).json('There was an error while adding the favorite with the ISBN.');
+    }else if (!validator.validateString(favorite)){
+        res.status(500).json('There was an error while adding the favorite with missing fields.');
+    }else{
+        const response = await mongodb.getDb().db('project').collection('favorites').insertOne(favorite);
+        if (response.acknowledged) {
+            res.status(201).json(response);
+        } else {
+            res.status(500).json(response.error || 'There was an error while adding the favorite.');
+        }
+    } 
+  };
+
+  /*////////////////
+////UPDATE Function////
+////////////////*/
 
 const updateFavorite = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
@@ -123,6 +148,7 @@ module.exports = {
     getFavoriteId,
     getFavoriteBook,
     getFavoriteReview,
+    addFavorite,
     updateFavorite,
     deleteFavorite
 }

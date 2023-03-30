@@ -110,8 +110,7 @@ const getBookReviews = async (req, res, next) => {
         } else {
             res.status(500).json(response.error || 'There was an error while adding the book.');
         }
-    }
-    
+    } 
   };
 
 const updateBook = async (req, res) => {
