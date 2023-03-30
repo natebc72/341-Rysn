@@ -110,7 +110,8 @@ const getBookReviews = async (req, res, next) => {
         } else {
             res.status(500).json(response.error || 'There was an error while adding the book.');
         }
-    } 
+    }
+    
   };
 
 const updateBook = async (req, res) => {
@@ -143,11 +144,12 @@ const updateBook = async (req, res) => {
   
   const deleteBook = async (req, res) => {
     queryId = req.params.id
+    console.log(queryId);
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const bookId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('project').collection('book').DeleteOne({ _id: bookId }, true);
+    const response = await mongodb.getDb().db('project').collection('book').remove({ _id: bookId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
