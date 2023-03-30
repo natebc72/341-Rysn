@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use('/', require('./routes'))
 
-app.get('/styles/index.css', (req, res) => {
+app.get('/styles/index.css', (req, res, next) => {
     res.setHeader('Content-Type', 'text/css');
     res.sendFile('styles/index.css', { root: __dirname });
 });

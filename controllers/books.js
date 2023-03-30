@@ -2,16 +2,18 @@ const mongodb = require('../db/connect');
 const validator = require('../library/validate');
 const ObjectId = require('mongodb').ObjectId; 
 
+
 /*////////////////
 ////GET Functions////
 ////////////////*/
-const getSingleBook = async (req, res, next) => {
+const getSingleBook = async (req, res) => {
     try{
         queryId = req.params.id;
         if(!queryId){
             res.status(400).json("Missing id to query with");
         }
         const dbresult = await mongodb.getDb().db('project').collection('book').find();
+        
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
@@ -78,7 +80,7 @@ const getBookReviews = async (req, res, next) => {
         const dbresultArray = dbresult.toArray();
         dbresultArray.then((content) => {
             res.setHeader('Content-Type', 'application/json');
-            const element = content.filter(contact => contact.bookID.toString() == queryId);
+            const element = content.filter(contact => contact._id.toString() == queryId);
             res.status(200).json(element);
         })
     }catch(err){
@@ -141,11 +143,12 @@ const updateBook = async (req, res) => {
   };
   
   const deleteBook = async (req, res) => {
+    queryId = req.params.id
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const bookId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('project').collection('books').remove({ _id: bookId }, true);
+    const response = await mongodb.getDb().db('project').collection('book').DeleteOne({ _id: bookId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();

@@ -572,6 +572,9 @@
     "/book/addBook": {
       "post": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "body",

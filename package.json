@@ -4,7 +4,7 @@
   "description": "CSE341 Rysn Team Project Book Tracking Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
     "swagger": "node ./swagger.js"
   },
@@ -29,6 +29,10 @@
     "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
+    "mock-req-res": "^1.2.1",
+    "node-mocks-http": "^1.12.2",
+    "supertest": "^6.3.3",
     "swagger-autogen": "^2.23.1"
   }
 }
