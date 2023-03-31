@@ -19,11 +19,8 @@ Content-Type: application/json
     "photo": "w-o-k.jpg"
 }
 
-### Delete Currently not working
-DELETE http://localhost:10000/book/6424e79a2499df244ff18bb1 HTTP/1.1
-
 #### Put Currently not working
-PUT http://localhost:10000/book/6424e1c67a3cf725d649558a HTTP/1.1
+PUT http://localhost:10000/book/6424e6987a3cf725d649558c HTTP/1.1
 Content-Type: application/json
 
 {
@@ -34,4 +31,22 @@ Content-Type: application/json
     "genre": "Sci-Fi",
     "synopsis": "Spensas world has been under alien attack for 10 decades. Pilots are the heroes of whats left of humanity, and becoming a pilot is Spensas dream. Ever since she was a little girl, Spensa has dreamed of soaring skyward and proving her bravery. But her fathers legacy stands in the way—he was a pilot who was killed for desertion years ago, branding Spensa the daughter of a coward, and making her chances of attending flight school slim to none.",
     "photo": "w-o-k.jpg"
+}
+
+### Delete Working
+DELETE http://localhost:10000/book/6424e6987a3cf725d649558c HTTP/1.1
+
+
+### Review Put
+PUT http://localhost:10000/review/64235ed0780fd2e7c77fcb64 HTTP/1.1
+Content-Type: application/json
+
+{
+    "isbn": "0375826696",
+    "title": "Eragon (The Inheritance Cycle, Book 1)",
+    "author": "Paolilni, Christopher",
+    "image": "eragon.jpg",
+    "review_content": "This book is the start to something great! This is hands down, one of the best series our there. Once I get started I can never stop. Amazing read.",
+    "rating": "5/5",
+    "user": "n-christiansen"
 }

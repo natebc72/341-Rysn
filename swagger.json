@@ -7,9 +7,7 @@
   },
   "host": "three41rysn-bookapp.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
@@ -50,9 +48,7 @@
     "/book/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -67,9 +63,7 @@
     "/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -168,9 +162,7 @@
     "/book/findByNumber/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -195,9 +187,7 @@
     "/book/findByAuthor/{author}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "author",
@@ -222,9 +212,7 @@
     "/book/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -249,9 +237,7 @@
     "/favorite/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -266,9 +252,7 @@
     "/favorite/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -358,9 +342,7 @@
     "/favorite/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -385,9 +367,7 @@
     "/favorite/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -412,9 +392,7 @@
     "/review/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -429,9 +407,7 @@
     "/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -467,13 +443,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "date": {
+                "isbn": {
                   "example": "any"
                 },
-                "description": {
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "image": {
                   "example": "any"
                 },
                 "rating": {
+                  "example": "any"
+                },
+                "user": {
+                  "example": "any"
+                },
+                "review_content": {
                   "example": "any"
                 }
               }
@@ -518,9 +506,7 @@
     "/request/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -535,9 +521,7 @@
     "/request/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -573,13 +557,19 @@
             "schema": {
               "type": "object",
               "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "requestor": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
                 "date": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "rating": {
                   "example": "any"
                 }
               }
@@ -624,9 +614,7 @@
     "/book/addBook": {
       "post": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "body",
