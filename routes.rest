@@ -1,4 +1,8 @@
-##Get all Books working
+########################################
+### Books Rest Portion
+#########################################
+
+##Get all
 GET http://localhost:10000/book/ HTTP/1.1
 
 ### Get single Book by ID working
@@ -37,6 +41,31 @@ Content-Type: application/json
 DELETE http://localhost:10000/book/6424e6987a3cf725d649558c HTTP/1.1
 
 
+#############################
+### Reviews Rest Portion
+#############################
+
+### Review Get All
+GET http://localhost:10000/review/ HTTP/1.1
+
+### Review Get One by ID
+GET http://localhost:10000/review/64235ed0780fd2e7c77fcb64 HTTP/1.1
+
+### Review Post
+POST http://localhost:10000/review/addReview HTTP/1.1
+Content-Type: application/json
+
+{
+    "isbn": "0375826696",
+    "title": "Eldest (Inheritance, Book 2)",
+    "author": "Paolilni, Christopher",
+    "image": "eldest.jpg",
+    "review_content": "Couldn't have asked for a better sequel. I want more!",
+    "rating": "5/5",
+    "user": "n-christiansen"
+}
+
+
 ### Review Put
 PUT http://localhost:10000/review/64235ed0780fd2e7c77fcb64 HTTP/1.1
 Content-Type: application/json
@@ -50,3 +79,6 @@ Content-Type: application/json
     "rating": "5/5",
     "user": "n-christiansen"
 }
+
+### Review Delete
+DELETE http://localhost:10000/review/ HTTP/1.1
