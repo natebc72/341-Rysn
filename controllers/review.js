@@ -1,5 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId; 
+const validator = require('../library/validate');
 
 /*////////////////
 ////GET Functions////

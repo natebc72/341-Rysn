@@ -1,5 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId; 
+const validator = require('../library/validate');
 
 /*////////////////
 ////GET Functions////
@@ -134,7 +135,7 @@ const updateFavorite = async (req, res) => {
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const favoriteID = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('project').collection('favorites').remove({ _id: favoriteID}, true);
+    const response = await mongodb.getDb().db('project').collection('favorites').deleteOne({ _id: favoriteID}, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();

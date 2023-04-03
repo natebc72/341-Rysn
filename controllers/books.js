@@ -129,12 +129,7 @@ const updateBook = async (req, res) => {
       synopsis: req.body.synopsis,
       photo: req.body.photo
     };
-    const response = await mongodb
-      .getDb()
-      .db('project')
-      .collection('books')
-      .replaceOne({ _id: bookId }, book);
-    console.log(response);
+    const response = await mongodb.getDb().db('project').collection('books').replaceOne({ _id: bookId }, book);
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
@@ -144,19 +139,29 @@ const updateBook = async (req, res) => {
   
   const deleteBook = async (req, res) => {
     queryId = req.params.id
-    console.log(queryId);
     if (!ObjectId.isValid(req.params.id)){
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const bookId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('project').collection('book').remove({ _id: bookId }, true);
-    console.log(response);
+    const response = await mongodb.getDb().db('project').collection('book').deleteOne({ _id: bookId }, true);
     if (response.deletedCount > 0) {
       res.status(204).send();
     } else {
       res.status(500).json(response.error || 'An error occurred while deleting the book.');
     }
   };
+
+  const deletebookIsbn = async (req, res) => {
+    queryId = req.params.id
+    if (!ObjectId.isValid(req.params.id)){
+        res.status(400).json('That is not a valid ID. Please try again.');
+    }
+    const bookId = req.params.id;
+    const response = await mongodb.getDb().db('project').collection('book').deleteOne({ isbn: bookId }, true);
+    
+  };
+
+  
 
 module.exports = {
     getSingleBook,
@@ -166,5 +171,6 @@ module.exports = {
     getBookReviews,
     updateBook,
     deleteBook,
-    addBook
+    addBook,
+    deletebookIsbn
 }
