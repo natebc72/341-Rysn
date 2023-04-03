@@ -4,7 +4,7 @@
     "title": "",
     "author": "",
     "image": "",
-    "review-content": "",
+    "review_content": "",
     "rating": "",
     "user": ""
   },
@@ -14,7 +14,7 @@
     "title": "Eragon (Inheritance, Book 1)",
     "author": "Paolilni, Christopher",
     "image": "eragon.jpg",
-    "review-content": "This book is the start to something great! This is hands down, one of the best series our there. Once I get started I can never stop. Amazing read.",
+    "review_content": "This book is the start to something great! This is hands down, one of the best series our there. Once I get started I can never stop. Amazing read.",
     "rating": "5/5",
     "user": "n-christiansen"
   },
@@ -24,7 +24,7 @@
     "title": "Tress of the Emerald Sea",
     "author": "Sanderson, Brandon",
     "image": "em-sea.jpg",
-    "review-content": "They say the grass is greener on someones elses lawn, but when your reading this your grass is deffinitly greener. This book takes you to a magical world and has you trapped till the very last page.",
+    "review_content": "They say the grass is greener on someones elses lawn, but when your reading this your grass is deffinitly greener. This book takes you to a magical world and has you trapped till the very last page.",
     "rating": "5/5",
     "user": "c-pledge"
   },
@@ -34,7 +34,7 @@
     "title": "Unbroken",
     "author": "Hillenbrand, Lauren",
     "image": "unbroke.jpg",
-    "review-content": "There's no other WWII memoir quite like this one. One of the best ones out there!",
+    "review_content": "There's no other WWII memoir quite like this one. One of the best ones out there!",
     "rating": "4.9/5",
     "user": "p-whitting"
   },
@@ -44,7 +44,7 @@
     "title": "",
     "author": "",
     "image": "",
-    "review-content": "",
+    "review_content": "",
     "rating": "",
     "user": ""
   }

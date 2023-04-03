@@ -42,9 +42,13 @@ const getSingleReviews = async (req, res, next) => {
 const addReview = async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   const review = {
-    date: req.body.date,
-    description: req.body.description,
-    rating: req.body.rating
+      isbn: req.body.isbn,
+      title: req.body.title,
+      author: req.body.author,
+      image: req.body.image,
+      rating: req.body.rating,
+      user: req.body.user,
+      review_content: req.body.review_content
   };
   if (!validator.validateString(review)){
       res.status(500).json('There was an error while adding the review with missing fields.');
@@ -67,9 +71,13 @@ const updateReview = async (req, res) => {
     }
     const reviewID = new ObjectId(req.params.id);
     const review = {
-      date: req.body.date,
-      description: req.body.description,
-      rating: req.body.rating
+      isbn: req.body.isbn,
+      title: req.body.title,
+      author: req.body.author,
+      image: req.body.image,
+      rating: req.body.rating,
+      user: req.body.user,
+      review_content: req.body.review_content
     };
     const response = await mongodb
       .getDb()
@@ -92,7 +100,7 @@ const updateReview = async (req, res) => {
         res.status(400).json('That is not a valid ID. Please try again.');
     }
     const reviewID = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('project').collection('reviews').remove({ _id: reviewID}, true);
+    const response = await mongodb.getDb().db('project').collection('reviews').deleteOne({ _id: reviewID}, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();

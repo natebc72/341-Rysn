@@ -120,7 +120,6 @@ const updateBook = async (req, res) => {
     }
     const bookId = new ObjectId(req.params.id);
     const book = {
-
       isbn: req.body.isbn,
       title: req.body.title,
       author: req.body.author,
@@ -144,6 +143,7 @@ const updateBook = async (req, res) => {
     }
     const bookId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db('project').collection('book').deleteOne({ _id: bookId }, true);
+    console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
     } else {

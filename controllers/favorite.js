@@ -107,7 +107,6 @@ const updateFavorite = async (req, res) => {
     }
     const favoriteID = new ObjectId(req.params.id);
     const favorite = {
-
       isbn: req.body.isbn,
       title: req.body.title,
       author: req.body.author,

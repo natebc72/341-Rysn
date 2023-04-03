@@ -42,9 +42,11 @@ const getSingleRequest = async (req, res, next) => {
 const addRequest = async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   const request = {
-    date: req.body.date,
-    description: req.body.description,
-    rating: req.body.rating
+    title: req.body.title,
+    author: req.body.author,
+    requestor: req.body.requestor,
+    email: req.body.email,
+    date: req.body.date
   };
   if(!validator.validateInt(request.isbn)){
       res.status(500).json('There was an error while adding the request with the ISBN.');
@@ -70,9 +72,11 @@ const updateRequest = async (req, res) => {
     }
     const requestID = new ObjectId(req.params.id);
     const request = {
-      date: req.body.date,
-      description: req.body.description,
-      rating: req.body.rating
+      title: req.body.title,
+      author: req.body.author,
+      requestor: req.body.requestor,
+      email: req.body.email,
+      date: req.body.date
     };
     const response = await mongodb
       .getDb()
