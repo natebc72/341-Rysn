@@ -7,9 +7,7 @@
   },
   "host": "three41rysn-bookapp.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
@@ -50,13 +48,11 @@
     "/book/": {
       "get": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -67,9 +63,7 @@
     "/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -89,14 +83,86 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "isbn": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "release": {
+                  "example": "any"
+                },
+                "genre": {
+                  "example": "any"
+                },
+                "synopsis": {
+                  "example": "any"
+                },
+                "photo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/book/findByNumber/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -121,9 +187,7 @@
     "/book/findByAuthor/{author}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "author",
@@ -148,9 +212,7 @@
     "/book/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -175,13 +237,11 @@
     "/favorite/": {
       "get": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -192,9 +252,7 @@
     "/favorite/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -214,14 +272,77 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "isbn": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/favorite/book/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -246,9 +367,7 @@
     "/favorite/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -273,13 +392,11 @@
     "/review/": {
       "get": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -290,9 +407,7 @@
     "/review/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -304,6 +419,80 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "isbn": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "user": {
+                  "example": "any"
+                },
+                "review_content": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request"
@@ -317,13 +506,11 @@
     "/request/": {
       "get": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -334,9 +521,7 @@
     "/request/{id}": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -356,11 +541,80 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "requestor": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/book/addBook": {
       "post": {
         "description": "",
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "body",
@@ -387,6 +641,52 @@
                   "example": "any"
                 },
                 "photo": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/reviews/addReview": {
+      "post": {
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "isbn": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "user": {
+                  "example": "any"
+                },
+                "review": {
                   "example": "any"
                 }
               }

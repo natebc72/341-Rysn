@@ -128,13 +128,18 @@ const updateBook = async (req, res) => {
       synopsis: req.body.synopsis,
       photo: req.body.photo
     };
-    const response = await mongodb.getDb().db('project').collection('books').replaceOne({ _id: bookId }, book);
-    if (response.modifiedCount > 0) {
-      res.status(204).send();
-    } else {
-      res.status(500).json(response.error || 'An error occurred while updating the book.');
-    }
-  };
+    const response = await mongodb
+    .getDB()
+    .db('project')
+    .collection('book')
+    .replaceOne({ _id: bookId }, book);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'There was an error while updating the book.');
+  }
+};
   
   const deleteBook = async (req, res) => {
     queryId = req.params.id
