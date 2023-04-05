@@ -73,7 +73,7 @@ routes.post("/book/addBook", bookController.addBook);
 //Favorite Routes//
 
 //Reviews Routes//
-
+routes.post("/review/addReview", reviewController.addReview);
 //Requests Routes//
 
 /*////////////////

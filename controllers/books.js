@@ -129,7 +129,7 @@ const updateBook = async (req, res) => {
       photo: req.body.photo
     };
     const response = await mongodb
-    .getDB()
+    .getDb()
     .db('project')
     .collection('book')
     .replaceOne({ _id: bookId }, book);
