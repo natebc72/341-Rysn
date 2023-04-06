@@ -16,8 +16,8 @@ app.get('/styles/index.css', (req, res, next) => {
     res.sendFile('styles/index.css', { root: __dirname });
 });
 
-/*app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Running on port ${port}`)
-})*/
+})
 
 module.exports = app;
