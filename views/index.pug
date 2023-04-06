@@ -11,6 +11,15 @@ html(lang="en")
           footer
           form(action="/login" method="GET")
               button(type="submit") Logout
+          form(action="/book" method="GET")
+              button(type="submit") Get Books
+          form(action="/favorite" method="GET")
+              button(type="submit") Get Favorites
+          form(action="/review" method="GET")
+              button(type="submit") Get Reviews
+          form(action="/request" method="GET")
+              button(type="submit") Get Requests
+          
         #unauthorized 
             p You need to log in to access this content.
             form(action="/login" method="GET")
