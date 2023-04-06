@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 #### Put Currently not working
-PUT http://localhost:10000/book/6424e6987a3cf725d649558c HTTP/1.1
+PUT http://localhost:10000/book/642dbacb26581f26b0c0d3a9 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 
 ### Delete Working
-DELETE http://localhost:10000/book/6424e6987a3cf725d649558c HTTP/1.1
+DELETE http://localhost:10000/book/642dbacb26581f26b0c0d3a9 HTTP/1.1
 
 
 #############################
