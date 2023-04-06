@@ -9,7 +9,7 @@ let mc;
       mongoClient = new MongoClient(uri);
       console.log('Connecting to MongoDB Atlas cluster...');
       await mongoClient.connect();
-      //console.log('Successfully connected to MongoDB Atlas!');
+      console.log('Successfully connected to MongoDB Atlas!');
       mc = mongoClient;
       return mongoClient;
   } catch (error) {
