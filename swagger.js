@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Book Collection App',
-    description: 'Book Collection App'
+    title: 'Rysn Tide Books App',
+    description: 'Book Collection for Rysn Tide Books'
   },
   host: 'three41rysn-bookapp.onrender.com',
   schemes: ['https']
