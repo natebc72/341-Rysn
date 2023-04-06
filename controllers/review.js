@@ -79,10 +79,10 @@ const updateReview = async (req, res) => {
       user: req.body.user,
       review_content: req.body.review_content
     };
-    if(!validator.validateInt(book.isbn)){
-      res.status(500).json('There was an error while adding the book with the ISBN.');
-    }else if (!validator.validateString(book)){
-        res.status(500).json('There was an error while adding the book with missing fields.');
+    if(!validator.validateInt(review.isbn)){
+      res.status(500).json('There was an error while updating the review with the ISBN.');
+    }else if (!validator.validateString(review)){
+        res.status(500).json('There was an error while updating the review with missing fields.');
     }else{
       const response = await mongodb
         .getDb()

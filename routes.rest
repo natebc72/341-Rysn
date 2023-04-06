@@ -67,16 +67,16 @@ Content-Type: application/json
 
 
 ### Review Put
-PUT http://localhost:10000/review/642ddc6eb90194784c2cdef9 HTTP/1.1
+PUT http://localhost:10000/review/642efe9ccde42334ec684f37 HTTP/1.1
 Content-Type: application/json
 
 {
     "isbn": "0375826696",
-    "title": "Eragon (The Inheritance Cycle, Book 1)",
+    "title": "Eragon (The Inheritance Cycle: Book 1)",
     "author": "Paolilni, Christopher",
     "image": "eragon.jpg",
     "review_content": "This book is the start to something great! This is hands down, one of the best series our there. Once I get started I can never stop. Amazing read.",
-    "rating": "5/5",
+    "rating": "4.5/5",
     "user": "n-christiansen"
 }
 

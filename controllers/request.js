@@ -78,10 +78,10 @@ const updateRequest = async (req, res) => {
       email: req.body.email,
       date: req.body.date
     };
-    if(!validator.validateInt(book.isbn)){
-      res.status(500).json('There was an error while adding the book with the ISBN.');
-    }else if (!validator.validateString(book)){
-        res.status(500).json('There was an error while adding the book with missing fields.');
+    if(!validator.validateInt(request.isbn)){
+      res.status(500).json('There was an error while updating the request with the ISBN.');
+    }else if (!validator.validateString(request)){
+        res.status(500).json('There was an error while updating the request with missing fields.');
     }else{
           const response = await mongodb
           .getDb()

@@ -112,10 +112,10 @@ const updateFavorite = async (req, res) => {
       author: req.body.author,
       image: req.body.image
     };
-    if(!validator.validateInt(book.isbn)){
-        res.status(500).json('There was an error while adding the book with the ISBN.');
-    }else if (!validator.validateString(book)){
-        res.status(500).json('There was an error while adding the book with missing fields.');
+    if(!validator.validateInt(favorite.isbn)){
+        res.status(500).json('There was an error while updating this favorite with the ISBN.');
+    }else if (!validator.validateString(favorite)){
+        res.status(500).json('There was an error while updating this favorite with missing fields.');
     }else{
         const response = await mongodb
         .getDb()

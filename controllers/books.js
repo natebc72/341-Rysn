@@ -129,9 +129,9 @@ const updateBook = async (req, res) => {
       photo: req.body.photo
     };
     if(!validator.validateInt(book.isbn)){
-        res.status(500).json('There was an error while adding the book with the ISBN.');
+        res.status(500).json('There was an error while updating the book with the ISBN.');
     }else if (!validator.validateString(book)){
-        res.status(500).json('There was an error while adding the book with missing fields.');
+        res.status(500).json('There was an error while updating the book with missing fields.');
     }else{
             const response = await mongodb
             .getDb()
