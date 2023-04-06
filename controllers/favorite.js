@@ -112,15 +112,22 @@ const updateFavorite = async (req, res) => {
       author: req.body.author,
       image: req.body.image
     };
-    const response = await mongodb
-      .getDb()
-      .db('project')
-      .collection('favorites')
-      .replaceOne({ _id: favoriteID }, favorite);
-    if (response.modifiedCount > 0) {
-      res.status(204).send();
-    } else {
-      res.status(500).json(response.error || 'An error occurred while updating the favorite.');
+    if(!validator.validateInt(book.isbn)){
+        res.status(500).json('There was an error while adding the book with the ISBN.');
+    }else if (!validator.validateString(book)){
+        res.status(500).json('There was an error while adding the book with missing fields.');
+    }else{
+        const response = await mongodb
+        .getDb()
+        .db('project')
+        .collection('favorites')
+        .replaceOne({ _id: favoriteID }, favorite);
+        console.log(response);
+        if (response.modifiedCount > 0) {
+        res.status(204).send();
+        } else {
+        res.status(500).json(response.error || 'An error occurred while updating the favorite.');
+        }
     }
   };
 
