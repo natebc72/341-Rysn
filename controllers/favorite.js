@@ -117,7 +117,6 @@ const updateFavorite = async (req, res) => {
       .db('project')
       .collection('favorites')
       .replaceOne({ _id: favoriteID }, favorite);
-    console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
@@ -135,7 +134,6 @@ const updateFavorite = async (req, res) => {
     }
     const favoriteID = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db('project').collection('favorites').deleteOne({ _id: favoriteID}, true);
-    console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();
     } else {
