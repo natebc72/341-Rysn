@@ -71,12 +71,10 @@ routes.get("/request/:id", requestController.getSingleRequest);
 //Book Routes//
 routes.post("/book/addBook", bookController.addBook);
 //Favorite Routes//
-routes.post("/favorite/addFavorite", favoriteController.addFavorite)
+
 //Reviews Routes//
 routes.post("/review/addReview", reviewController.addReview);
 //Requests Routes//
-routes.post("/request/addRequest", requestController.addRequest);
-
 
 /*////////////////
 ////PUT ROUTES////

@@ -79,16 +79,22 @@ const updateReview = async (req, res) => {
       user: req.body.user,
       review_content: req.body.review_content
     };
-    const response = await mongodb
-      .getDb()
-      .db('project')
-      .collection('reviews')
-      .replaceOne({ _id: reviewID }, review);
-    console.log(response);
-    if (response.modifiedCount > 0) {
-      res.status(204).send();
-    } else {
-      res.status(500).json(response.error || 'An error occurred while updating the review.');
+    if(!validator.validateInt(book.isbn)){
+      res.status(500).json('There was an error while adding the book with the ISBN.');
+    }else if (!validator.validateString(book)){
+        res.status(500).json('There was an error while adding the book with missing fields.');
+    }else{
+      const response = await mongodb
+        .getDb()
+        .db('project')
+        .collection('reviews')
+        .replaceOne({ _id: reviewID }, review);
+      console.log(response);
+      if (response.modifiedCount > 0) {
+        res.status(204).send();
+      } else {
+        res.status(500).json(response.error || 'An error occurred while updating the review.');
+      }
     }
   };
 
