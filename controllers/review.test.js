@@ -43,7 +43,7 @@ describe("Test handlers", function(){
                 description: 'test',
                 rating: 'test'
         }};
-        //await addReview(req,res);
+        await addReview(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
@@ -51,7 +51,7 @@ describe("Test handlers", function(){
 
     test('Delete review', async () => {
         const req = { params: { id: '12345678910111'}};
-        //await deleteReview(req,res);
+        await deleteReview(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
@@ -63,7 +63,7 @@ describe("Test handlers", function(){
                     description: 'test',
                     rating: 'test'
         }};
-        //await updateReview(req,res);
+        await updateReview(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 

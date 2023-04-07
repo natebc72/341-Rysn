@@ -24,28 +24,28 @@ describe("Test handlers", function(){
 
     test('Get all favorites', async () => {
         const req = {};
-        //await getFavorites(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await getFavorites(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
     test('Get single favorites', async () => {
         const req = { params: { id: '64235e6e780fd2e7c77fcb60'}};
-        //await getFavoriteId(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await getFavoriteId(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
     test('Get single favorites', async () => {
         const req = { params: { id: '64235e6e780fd2e7c77fcb60'}};
-        //await getFavoriteReview(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await getFavoriteReview(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
 
     test('Get favorite book', async () => {
         const req = { params: { id: '6407701a8d68541ba17ab03d'}};
-        //await getFavoriteBook(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await getFavoriteBook(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
@@ -57,8 +57,8 @@ describe("Test handlers", function(){
                 author: 'test',
                 image: 'test'
         }};
-        //await addFavorite(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await addFavorite(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
@@ -71,14 +71,14 @@ describe("Test handlers", function(){
                 author: 'test',
                 image: 'test'
         }};
-        //await updateFavorite(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await updateFavorite(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
     test('Delete favorite', async () => {
         const req = { params: { id: '6425ce0071863b5c2d0d5321'}};
-        //await deleteFavorite(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
+        await deleteFavorite(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
     });
 });

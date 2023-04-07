@@ -71,10 +71,10 @@ describe("Test handlers", function(){
                 photo: 'test'
         }};
         const res = {};
-        //await addBook(req,res);
-        //expect(res.status).toHaveBeenCalledWith(200);
-        //req = { params: { id: '123456789101'}};
-        //await deletebookIsbn(req,res);
+        await addBook(req,res);
+        expect(res.status).toHaveBeenCalledWith(200);
+        req = { params: { id: '123456789101'}};
+        await deletebookIsbn(req,res);
     });
 
 
@@ -91,14 +91,14 @@ describe("Test handlers", function(){
             photo: 'test'
         }};
         
-        //await updateBook(req,res);
+        await updateBook(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
 
     test('Delete single book', async () => {
         const req = { params: { id: '6425c4d3bf95d31fc68fd72d'}};
-        //await deleteBook(req,res);
+        await deleteBook(req,res);
         expect(res.status).toHaveBeenCalledWith(204);
     });
 });

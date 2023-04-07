@@ -44,7 +44,7 @@ describe("Test handlers", function(){
                 description: 'test',
                 rating: 'test'
         }};
-        //await addRequest(req,res);
+        await addRequest(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 
@@ -64,7 +64,7 @@ describe("Test handlers", function(){
                     description: 'test',
                     rating: 'test'
         }};
-        //await updateRequest(req,res);
+        await updateRequest(req,res);
         expect(res.status).toHaveBeenCalledWith(200);
     });
 

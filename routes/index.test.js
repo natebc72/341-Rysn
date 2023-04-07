@@ -128,10 +128,10 @@ describe('PUT /book/:id', () => {
       const updateBookMock = jest.spyOn(bookController, 'updateBook');
       const id = 123456789101;
       const bookData = { title: 'Test Book', author: 'Test Author' };
-      //await request(app)
-      //  .put(`/book/${id}`)
-       // .send(bookData);
-      //expect(updateBookMock).toHaveBeenCalled;
+      await request(app)
+       .put(`/book/${id}`)
+       .send(bookData);
+      expect(updateBookMock).toHaveBeenCalled;
     });
   }, 10000);
   
@@ -142,10 +142,10 @@ describe('PUT /book/:id', () => {
       const updateFavoriteMock = jest.spyOn(favoriteController, 'updateFavorite');
       const id = 123456789101;
       const favoriteData = { bookId: 456 };
-      //await request(app)
-      //  .put(`/favorite/${id}`)
-      //  .send(favoriteData);
-      //expect(updateFavoriteMock).toHaveBeenCalled;
+      await request(app)
+       .put(`/favorite/${id}`)
+       .send(favoriteData);
+      expect(updateFavoriteMock).toHaveBeenCalled;
     }, 10000);
   });
 
@@ -155,10 +155,10 @@ describe('PUT /book/:id', () => {
       const updateReviewMock = jest.spyOn(reviewController, 'updateReview');
       const id = 123456789101;
       const reviewData = { title: 'Test Review', content: 'Test Content' };
-      //await request(app)
-        //.put(`/review/${id}`)
-        //.send(reviewData);
-      //expect(updateReviewMock).toHaveBeenCalled;
+      await request(app)
+        .put(`/review/${id}`)
+        .send(reviewData);
+      expect(updateReviewMock).toHaveBeenCalled;
     });
   });
   
@@ -168,10 +168,10 @@ describe('PUT /book/:id', () => {
       const updateRequestMock = jest.spyOn(requestController, 'updateRequest');
       const id = 123456789101;
       const requestData = { bookId: 456, status: 'Approved' };
-      //await request(app)
-      //  .put(`/request/${id}`)
-       // .send(requestData);
-      //expect(updateRequestMock).toHaveBeenCalled;
+      await request(app)
+       .put(`/request/${id}`)
+       .send(requestData);
+      expect(updateRequestMock).toHaveBeenCalled;
     });
   });
 
